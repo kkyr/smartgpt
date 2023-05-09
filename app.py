@@ -19,9 +19,9 @@ def generate_response(messages):
         temperature=0.5,
     )
 
-    # print(f"\n> Sending request to agent\n\n{messages}")
+    print(f"\n> Sending request to agent\n\n{messages}")
     response = response.choices[0].message['content'].strip()
-    # print(f"\n> Received response from agent\n\n{response}")
+    print(f"\n> Received response from agent\n\n{response}")
 
     return response
 
@@ -70,6 +70,9 @@ def main():
         {"role": "user", "content": resolver_prompt},
     ])
 
+    print("\n\n======AGENT RESPONSE======\n\n")
+    print(resolver_response)
+
 
 if __name__ == '__main__':
-    print(main())
+    main()
